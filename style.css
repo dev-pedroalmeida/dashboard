@@ -36,10 +36,10 @@ body {
 
 .wrapper {
     background-color: var(--bg-main);
-    height: 100vh;
+    min-height: 100vh;
     padding: var(--space);
     display: grid;
-    grid-template-columns: 220px 1fr 200px;
+    grid-template-columns: 220px minmax(200px, 1fr) 200px;
     grid-template-rows: 120px 1fr;
     gap: var(--space);
 }
@@ -134,36 +134,29 @@ svg, img {
 }
 
 .nav-search {
-    height: 26px;
+    height: 32px;
     display: flex;
     align-items: center;
 }
 
 .search-btn {
-    height: 26px;
-    width: 26px;
+    height: 32px;
+    width: 32px;
     padding: 6px;
     outline-color: transparent;
     border: transparent;
     cursor: pointer;
     background-color: var(--bg-secondary);
-    border-radius: 
-    var(--border-radius)
-    0
-    0
-    var(--border-radius);
+    border-radius: 1000px 0 0 1000px;
 }
 
 .nav-search input {
-    width: 100%;
+    width: 90%;
     height: 100%;
     border: 1px solid var(--bg-secondary);
     background-color: var(--bg-secondary);
     padding: 6px 12px;
-    border-radius: 0
-    var(--border-radius)
-    var(--border-radius)
-    0;
+    border-radius: 0 1000px 1000px 0;
 }
 
 .nav-search input:focus {
@@ -198,6 +191,8 @@ svg, img {
     display: flex;
     align-items: center;
     gap: 12px;
+    color: var(--accent-primary);
+    font-size: .8rem;
 }
 
 .user-info img {
@@ -230,11 +225,16 @@ svg, img {
 
 /* MAIN */
 
-.main {
+.projects {
     background-color: var(--bg-primary);
     grid-area: 2 / 2 / 3 / 3;
     border-radius: var(--border-radius);
+    padding: var(--space);
+
+    
 }
+
+
 
 /* INFO */
 
