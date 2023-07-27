@@ -270,6 +270,7 @@ svg, img {
     color: var(--color-secondary);
     font-size: .85rem;
     flex: 1;
+    margin-top: calc(var(--space) / 2);
 }
 
 .project-footer {
@@ -293,4 +294,14 @@ svg, img {
     background-color: var(--bg-primary);
     grid-area: 2 / 3 / 3 / 4;
     border-radius: var(--border-radius);
+    padding: var(--space);
+}
+
+.news-card {
+    margin-top: var(--space);
+}
+
+.news-card p {
+    font-size: .74rem;
+    color: var(--color-secondary);
 }
