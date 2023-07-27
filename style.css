@@ -230,11 +230,62 @@ svg, img {
     grid-area: 2 / 2 / 3 / 3;
     border-radius: var(--border-radius);
     padding: var(--space);
-
-    
 }
 
+.projects h3 {
+    margin-bottom: var(--space);
+}
 
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space);
+}
+
+.project {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--space);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.project::before {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 5px;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-primary);
+    position: absolute;
+    left: 6px;
+}
+
+.project h4 {
+    color: var(--accent-primary);
+}
+
+.project p {
+    color: var(--color-secondary);
+    font-size: .85rem;
+    flex: 1;
+}
+
+.project-footer {
+    margin-top: var(--space);
+    padding-top: 8px;
+    border-top: 1px solid var(--bg-main);
+    width: 100%;
+    display: grid;
+    grid-template-rows: 24px;
+    grid-template-columns: 24px;
+    grid-auto-columns: 24px;
+    grid-auto-flow: column;
+    gap: 8px;
+    justify-content: end;
+    flex: 0;
+}
 
 /* INFO */
 
