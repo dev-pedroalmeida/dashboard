@@ -29,7 +29,7 @@ body {
     min-height: 100vh;
     padding: var(--space);
     display: grid;
-    grid-template-columns: auto minmax(200px, 1fr) 200px;
+    grid-template-columns: auto minmax(150px, 2fr) minmax(100px, 1fr);
     grid-template-rows: auto 1fr;
     gap: var(--space);
 }
@@ -48,7 +48,7 @@ svg, img {
     background-color: var(--bg-secondary);
     grid-area: 1 / 1 / 3 / 2;
     border-radius: var(--border-radius);
-    padding: var(--border-radius);
+    padding: var(--space);
 
     position: relative;
 }
@@ -101,21 +101,6 @@ svg, img {
     bottom: 0;
 }
 
-@media (max-width: 785px) {
-    .sidebar {
-        font-size: 0;
-    }
-    .sidebar .logo {
-        flex-direction: column;
-    }
-    .sidebar-item {
-        flex-direction: column;
-    }
-    .sidebar-footer {
-        display: none;
-    }
-}
-
 /* NAVBAR */
 
 .nav {
@@ -127,8 +112,9 @@ svg, img {
 
 .nav-row {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(150px, 1fr);
     grid-auto-flow: column;
+
     gap: var(--space);
     margin-bottom: 8px;
     align-items: center;
@@ -209,6 +195,7 @@ svg, img {
     color: var(--bg-secondary);
     cursor: pointer;
     transition: filter .2s ease;
+    font-size: .8rem;
 }
 
 .nav-action:hover {
@@ -255,12 +242,12 @@ svg, img {
 .project::before {
     content: "";
     display: block;
-    height: 20px;
+    height: 1.1em;
     width: 5px;
     border-radius: var(--border-radius);
     background-color: var(--accent-primary);
     position: absolute;
-    left: 6px;
+    left: calc(var(--space) / 2);
 }
 
 .project h4 {
@@ -305,4 +292,49 @@ svg, img {
 .news-card p {
     font-size: .74rem;
     color: var(--color-secondary);
+}
+
+/* Mobile breakpoint */
+
+@media (max-width: 785px) {
+    :root {
+        --space: 8px;
+        font-size: .9em;
+    }
+    .sidebar {
+        font-size: 0;
+        grid-row-end: 4;
+    }
+    .sidebar .logo {
+        flex-direction: column;
+    }
+    .sidebar-item {
+        flex-direction: column;
+    }
+    .sidebar-footer {
+        display: none;
+    }
+
+    .nav-row:last-of-type {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+    }
+    .nav-action {
+        grid-row: 2;
+    }
+    .user-info {
+        grid-column-end: span 3;
+    }
+
+    .project::before {
+        width: 3px;
+    }
+    .projects {
+        grid-column: 2 / 4;
+    }
+
+    .info {
+        grid-column: 2 / 4;
+        grid-row: 3;
+    }
 }
