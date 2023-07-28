@@ -29,7 +29,7 @@ body {
     min-height: 100vh;
     padding: var(--space);
     display: grid;
-    grid-template-columns: auto minmax(150px, 2fr) minmax(100px, 1fr);
+    grid-template-columns: minmax(32px, auto) minmax(150px, 2fr) minmax(100px, 1fr);
     grid-template-rows: auto 1fr;
     gap: var(--space);
 }
@@ -338,3 +338,18 @@ svg, img {
         grid-row: 3;
     }
 }
+
+@media (max-width: 340px) {
+    .sidebar {
+        padding: 0;
+    }
+    .sidebar-section {
+        margin: 32px 5px;
+    }
+    .sidebar svg {
+        width: 75%;
+    }
+}
+
+
+
