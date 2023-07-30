@@ -11,6 +11,18 @@
     --accent-secondary: #75a3e9;
     --space: 16px;
     --border-radius: 12px;
+    transition: all .5s;
+}
+
+:root.dark-theme {
+    --bg-main: #0f0f0f;
+    --bg-primary: #141414;
+    --bg-secondary: #181818;
+    --color-primary: #fcfcfc;
+    --color-secondary: #cccccc;
+    --color-active: #ffffff;
+    --accent-primary: #3647b3;
+    --accent-secondary: #75a3e9;
 }
 
 * {
@@ -40,6 +52,10 @@ a {
 
 svg, img {
     max-height: 100%;
+}
+
+svg {
+    fill: var(--color-primary);
 }
 
 /* SIDEBAR */
@@ -144,6 +160,7 @@ svg, img {
     background-color: var(--bg-secondary);
     padding: 6px 12px;
     border-radius: 0 1000px 1000px 0;
+    color: var(--color-primary);
 }
 
 .nav-search input:focus {
