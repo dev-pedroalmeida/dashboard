@@ -11,7 +11,6 @@
     --accent-secondary: #75a3e9;
     --space: 16px;
     --border-radius: 12px;
-    transition: all .5s;
 }
 
 :root.dark-theme {
@@ -25,10 +24,32 @@
     --accent-secondary: #75a3e9;
 }
 
+#sun, #moon {
+    fill: var(--color-primary);
+    transform-origin: center;
+    transition: all .3s ease;
+}
+
+#moon {
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
+:root.dark-theme #moon {
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
+:root.dark-theme #sun {
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: background-color .4s ease;
 }
 
 body {
@@ -52,6 +73,7 @@ a {
 
 svg, img {
     max-height: 100%;
+    max-width: 100%;
 }
 
 svg {
